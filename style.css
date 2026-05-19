@@ -109,7 +109,8 @@ h1, h2, h3, h4 {
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 60%);
-    padding-top: 5rem;
+    padding-top: 4rem;
+    margin-top: 80px;
 }
 
 .badge {

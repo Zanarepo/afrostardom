@@ -1,0 +1,156 @@
+/* visual-roadmap.css */
+
+.gantt-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Individual Sprint Containers */
+.sprint-container {
+    background-color: var(--surface);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    overflow-x: auto; /* Allow horizontal scrolling if container is too small */
+}
+
+/* Timeline Header */
+.sprint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sprint-header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text);
+}
+
+/* Timeline Grid Layout */
+.timeline-grid {
+    display: grid;
+    /* Divide the grid by the total days in this specific sprint */
+    grid-template-columns: repeat(var(--total-days), 1fr);
+    position: relative;
+    padding-bottom: 1rem;
+    min-width: 800px; /* Force minimum width to keep bars wide enough for text */
+}
+
+/* Day Markers (Ticks) */
+.timeline-ticks {
+    display: grid;
+    grid-template-columns: repeat(var(--total-days), 1fr);
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 1rem;
+}
+
+.tick {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-left: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+/* Task Bar Area */
+.tasks-area {
+    display: grid;
+    grid-template-columns: repeat(var(--total-days), 1fr);
+    grid-column: 1 / -1;
+    grid-row: 2;
+    row-gap: 12px; /* Add vertical space between tasks */
+    /* Add vertical dashed lines for days extending down */
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: calc(100% / var(--total-days)) 100%;
+}
+
+/* Individual Clickable Bars */
+.gantt-bar {
+    grid-column: var(--start) / span var(--span);
+    grid-row: var(--row);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align text to start */
+    padding: 0.5rem 0.8rem;
+    
+    /* Crucial fix for text overflow */
+    white-space: nowrap;
+    overflow: visible; /* Let text break out if the box is too small */
+    
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 36px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Make sure text doesn't get clipped and stays visible */
+.gantt-bar-text {
+    z-index: 2;
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    position: sticky; /* Keep text visible while scrolling */
+    left: 10px;
+}
+
+.gantt-bar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    filter: brightness(1.1);
+    z-index: 10;
+}
+
+/* Colors based on Team type */
+.color-backend { background-color: #2D3748; border-left: 5px solid #4299E1; }
+.color-frontend { background-color: #2D3748; border-left: 5px solid #48BB78; }
+.color-fullstack { background-color: #2D3748; border-left: 5px solid #9F7AEA; }
+.color-qa { background-color: #2D3748; border-left: 5px solid #ED8936; }
+.color-devops { background-color: #2D3748; border-left: 5px solid #F56565; }
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    background-color: var(--surface);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 400;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 20;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

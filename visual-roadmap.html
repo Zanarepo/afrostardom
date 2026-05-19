@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrostardom | Visual Roadmap</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="visual-roadmap.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-star highlight"></i> AFROSTARDOM ROADMAP
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Detailed Plan</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="badge">Visual Timeline</div>
+            <h1>Sprint-by-Sprint <span class="highlight">Breakdown</span></h1>
+            <p>Click on any deliverable to jump directly to its full breakdown and logic in the main documentation.</p>
+        </div>
+    </div>
+
+    <main class="gantt-container">
+
+        <!-- Sprint 1 -->
+        <section class="sprint-container">
+            <div class="sprint-header">
+                <h2>Sprint 1: Architecture & Core Auth</h2>
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text);">Days 1–10 (10 Days)</span>
+            </div>
+            <div class="timeline-grid" style="--total-days: 10;">
+                <div class="timeline-ticks" data-start="1" data-end="10"></div>
+                <div class="tasks-area">
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 1; --span: 3; --row: 1;">
+                        <span class="gantt-bar-text">DB Schema Design</span>
+                        <span class="tooltiptext">Days 1-3 | Backend | All</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 1; --span: 5; --row: 2;">
+                        <span class="gantt-bar-text">Fan Auth & Guest View</span>
+                        <span class="tooltiptext">Days 1-5 | Frontend | Fan</span>
+                    </a>
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 1; --span: 5; --row: 3;">
+                        <span class="gantt-bar-text">Creator Auth & KYC</span>
+                        <span class="tooltiptext">Days 1-5 | Full-Stack | Creator</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 3; --span: 4; --row: 4;">
+                        <span class="gantt-bar-text">RBAC Middleware</span>
+                        <span class="tooltiptext">Days 3-6 | Backend | Admin</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 5; --span: 4; --row: 5;">
+                        <span class="gantt-bar-text">KYC Review UI</span>
+                        <span class="tooltiptext">Days 5-8 | Frontend | Admin</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 6; --span: 5; --row: 6;">
+                        <span class="gantt-bar-text">Geo-IP & i18n</span>
+                        <span class="tooltiptext">Days 6-10 | Full-Stack | Fan</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 8; --span: 3; --row: 7;">
+                        <span class="gantt-bar-text">Audit Log</span>
+                        <span class="tooltiptext">Days 8-10 | Backend | Admin</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sprint 2 -->
+        <section class="sprint-container">
+            <div class="sprint-header">
+                <h2>Sprint 2: Booking Engine & Escrow</h2>
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text);">Days 11–25 (15 Days)</span>
+            </div>
+            <div class="timeline-grid" style="--total-days: 15;">
+                <div class="timeline-ticks" data-start="11" data-end="25"></div>
+                <div class="tasks-area">
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 1; --span: 4; --row: 1;">
+                        <span class="gantt-bar-text">Offerings Engine</span>
+                        <span class="tooltiptext">Days 11-14 | Frontend | Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 1; --span: 6; --row: 2;">
+                        <span class="gantt-bar-text">Shoutouts Flow</span>
+                        <span class="tooltiptext">Days 11-16 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 1; --span: 6; --row: 3;">
+                        <span class="gantt-bar-text">Video/Song Requests</span>
+                        <span class="tooltiptext">Days 11-16 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 4; --span: 5; --row: 4;">
+                        <span class="gantt-bar-text">Video Bookings</span>
+                        <span class="tooltiptext">Days 14-18 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 4; --span: 5; --row: 5;">
+                        <span class="gantt-bar-text">Payment Gateway</span>
+                        <span class="tooltiptext">Days 14-18 | Backend | Fan</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 6; --span: 5; --row: 6;">
+                        <span class="gantt-bar-text">Escrow Ledger</span>
+                        <span class="tooltiptext">Days 16-20 | Backend | Admin+Creator</span>
+                    </a>
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 8; --span: 5; --row: 7;">
+                        <span class="gantt-bar-text">Ad Bookings</span>
+                        <span class="tooltiptext">Days 18-22 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 8; --span: 5; --row: 8;">
+                        <span class="gantt-bar-text">Messaging / DMs</span>
+                        <span class="tooltiptext">Days 18-22 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 10; --span: 6; --row: 9;">
+                        <span class="gantt-bar-text">Subscriptions</span>
+                        <span class="tooltiptext">Days 20-25 | Full-Stack | Fan+Creator</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sprint 3 -->
+        <section class="sprint-container">
+            <div class="sprint-header">
+                <h2>Sprint 3: E-commerce & Notifications</h2>
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text);">Days 26–40 (15 Days)</span>
+            </div>
+            <div class="timeline-grid" style="--total-days: 15;">
+                <div class="timeline-ticks" data-start="26" data-end="40"></div>
+                <div class="tasks-area">
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 1; --span: 5; --row: 1;">
+                        <span class="gantt-bar-text">Merch Store</span>
+                        <span class="tooltiptext">Days 26-30 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 3; --span: 7; --row: 2;">
+                        <span class="gantt-bar-text">Auction System</span>
+                        <span class="tooltiptext">Days 28-34 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 5; --span: 7; --row: 3;">
+                        <span class="gantt-bar-text">Live Events</span>
+                        <span class="tooltiptext">Days 30-36 | Full-Stack | Fan+Creator</span>
+                    </a>
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 9; --span: 4; --row: 4;">
+                        <span class="gantt-bar-text">Creator Dashboard</span>
+                        <span class="tooltiptext">Days 34-37 | Frontend | Creator</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 9; --span: 4; --row: 5;">
+                        <span class="gantt-bar-text">Fan Library</span>
+                        <span class="tooltiptext">Days 34-37 | Frontend | Fan</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 9; --span: 5; --row: 6;">
+                        <span class="gantt-bar-text">Notification Matrix</span>
+                        <span class="tooltiptext">Days 34-38 | Backend | All</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 11; --span: 5; --row: 7;">
+                        <span class="gantt-bar-text">Financial Dashboard</span>
+                        <span class="tooltiptext">Days 36-40 | Full-Stack | Admin</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 13; --span: 3; --row: 8;">
+                        <span class="gantt-bar-text">SLA Auto-Refund</span>
+                        <span class="tooltiptext">Days 38-40 | Backend | All</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sprint 4 -->
+        <section class="sprint-container">
+            <div class="sprint-header">
+                <h2>Sprint 4: Moderation & Support</h2>
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text);">Days 41–50 (10 Days)</span>
+            </div>
+            <div class="timeline-grid" style="--total-days: 10;">
+                <div class="timeline-ticks" data-start="41" data-end="50"></div>
+                <div class="tasks-area">
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 1; --span: 4; --row: 1;">
+                        <span class="gantt-bar-text">Creator Wallet</span>
+                        <span class="tooltiptext">Days 41-44 | Full-Stack | Creator</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 1; --span: 4; --row: 2;">
+                        <span class="gantt-bar-text">Payout Processing</span>
+                        <span class="tooltiptext">Days 41-44 | Backend | Admin</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 4; --span: 4; --row: 3;">
+                        <span class="gantt-bar-text">Dispute Flow</span>
+                        <span class="tooltiptext">Days 44-47 | Full-Stack | All</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 4; --span: 4; --row: 4;">
+                        <span class="gantt-bar-text">Moderation Queue</span>
+                        <span class="tooltiptext">Days 44-47 | Full-Stack | Admin</span>
+                    </a>
+                    <a href="index.html#fan-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 6; --span: 4; --row: 5;">
+                        <span class="gantt-bar-text">Help Center</span>
+                        <span class="tooltiptext">Days 46-49 | Full-Stack | All</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-backend tooltip" style="--start: 7; --span: 4; --row: 6;">
+                        <span class="gantt-bar-text">Notifications Engine</span>
+                        <span class="tooltiptext">Days 47-50 | Backend | All</span>
+                    </a>
+                    <a href="index.html#admin-plan" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 8; --span: 3; --row: 7;">
+                        <span class="gantt-bar-text">Superadmin Panel</span>
+                        <span class="tooltiptext">Days 48-50 | Full-Stack | Admin</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sprint 5 -->
+        <section class="sprint-container">
+            <div class="sprint-header">
+                <h2>Sprint 5: QA & Launch</h2>
+                <span class="badge" style="background: rgba(255,255,255,0.1); color: var(--text);">Days 51–60 (10 Days)</span>
+            </div>
+            <div class="timeline-grid" style="--total-days: 10;">
+                <div class="timeline-ticks" data-start="51" data-end="60"></div>
+                <div class="tasks-area">
+                    <a href="index.html#launch-plan" target="_blank" class="gantt-bar color-qa tooltip" style="--start: 1; --span: 5; --row: 1;">
+                        <span class="gantt-bar-text">Closed Beta</span>
+                        <span class="tooltiptext">Days 51-55 | QA | All</span>
+                    </a>
+                    <a href="index.html#creator-plan" target="_blank" class="gantt-bar color-frontend tooltip" style="--start: 2; --span: 4; --row: 2;">
+                        <span class="gantt-bar-text">Accessibility Audit</span>
+                        <span class="tooltiptext">Days 52-55 | Frontend | All</span>
+                    </a>
+                    <a href="index.html#launch-plan" target="_blank" class="gantt-bar color-qa tooltip" style="--start: 4; --span: 3; --row: 3;">
+                        <span class="gantt-bar-text">Load Testing</span>
+                        <span class="tooltiptext">Days 54-56 | DevOps | All</span>
+                    </a>
+                    <a href="index.html#launch-plan" target="_blank" class="gantt-bar color-qa tooltip" style="--start: 5; --span: 3; --row: 4;">
+                        <span class="gantt-bar-text">Cross-Browser QA</span>
+                        <span class="tooltiptext">Days 55-57 | QA | Fan</span>
+                    </a>
+                    <a href="index.html#core-fixes" target="_blank" class="gantt-bar color-fullstack tooltip" style="--start: 5; --span: 5; --row: 5;">
+                        <span class="gantt-bar-text">P0/P1 Bug Fixes</span>
+                        <span class="tooltiptext">Days 55-59 | All Devs | All</span>
+                    </a>
+                    <a href="index.html#launch-plan" target="_blank" class="gantt-bar color-devops tooltip" style="--start: 8; --span: 2; --row: 6;">
+                        <span class="gantt-bar-text">Production Deploy</span>
+                        <span class="tooltiptext">Days 58-59 | DevOps | All</span>
+                    </a>
+                    <a href="index.html#gtm-plan" target="_blank" class="gantt-bar color-devops tooltip" style="--start: 10; --span: 1; --row: 7; background-color: var(--primary); border-left: none; box-shadow: 0 0 15px var(--primary);">
+                        <span class="gantt-bar-text" style="color: #000;">🚀 Launch Day</span>
+                        <span class="tooltiptext" style="color: #fff;">Day 60 | All Teams | All</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Generate the days for the grid header dynamically based on the start/end attributes
+        document.querySelectorAll('.timeline-ticks').forEach(container => {
+            const start = parseInt(container.getAttribute('data-start'));
+            const end = parseInt(container.getAttribute('data-end'));
+            
+            for (let i = start; i <= end; i++) {
+                const tick = document.createElement('div');
+                tick.className = 'tick';
+                tick.innerHTML = `<span>D${i}</span>`;
+                container.appendChild(tick);
+            }
+        });
+    </script>
+</body>
+</html>

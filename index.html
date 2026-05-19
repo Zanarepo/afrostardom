@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrostardom | Comprehensive Technical Roadmap</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-star"></i> Afrostardom Roadmap
+        </div>
+        <div class="nav-progress">
+            <div class="progress-bar-wrap-small">
+                <div class="progress-bar" id="nav-progress-bar"></div>
+            </div>
+            <span id="nav-progress-text">0%</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#creator-plan">Creator Plan</a></li>
+            <li><a href="#fan-plan">Fan Plan</a></li>
+            <li><a href="#admin-plan">Admin Plan</a></li>
+            <li><a href="#launch-plan">Launch</a></li>
+            <li><a href="#gtm-plan">GTM</a></li>
+            <li><a href="#seo-plan">SEO</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="overview">
+        <div class="hero-content">
+            <span class="badge">Comprehensive Masterplan</span>
+            <h1>The Blueprint to <span class="highlight">Launch</span></h1>
+            <p>Harmonizing the Creator, Fan, and Admin ecosystems for a 100% functional deployment within 60 days.
+                Target KPI: ≥ 98% Booking Flow Success Rate.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- CREATOR PLAN -->
+        <section class="section plan-section" id="creator-plan">
+            <h2 class="section-title"><i class="fa-solid fa-microphone-lines highlight"></i> Creator End-to-End
+                Technical Roadmap</h2>
+            <p class="section-subtitle">Ensuring 100% coverage for all 8 core monetization features identified in the PM
+                KPI document.</p>
+
+            <div class="phase-card">
+                <h3>Phase 1: Authentication & Onboarding</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Creator signs up (Email/OAuth) -> 2. Email Verification -> 3. Selects Category (Musician, Chef,
+                        Actor, etc.) -> 4. Fills Profile (Bio, Socials) -> 5. Identity Verification (KYC) -> 6. Admin
+                        Approval -> 7. Access to Creator Dashboard.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>UI/UX:</strong> Multi-step wizard form. Clear status indicators for "Pending Admin
+                        Approval."<br>
+                        <strong>FE Logic:</strong> Form validation, state management for wizard steps, handling
+                        JWT/Session tokens.<br>
+                        <strong>BE Logic:</strong> Auth endpoints (/auth/register, etc.). Store user role as CREATOR.
+                        Create KYC submission endpoint; trigger notification to Admin panel.
+                    </p>
+                    <h4>3. Testing & Acceptance Criteria</h4>
+                    <label class="task"><input type="checkbox" data-id="c_1_1"><span class="custom-cb"></span> Test:
+                        Verify OAuth successfully provisions a Creator account.</label>
+                    <label class="task"><input type="checkbox" data-id="c_1_2"><span class="custom-cb"></span> Test:
+                        Ensure unapproved creators cannot access the monetization dashboard.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 2: Category & Pricing Setup (The Offering Engine)</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Creator navigates to "My Offerings" -> Toggles specific services on/off -> Sets base price in USD
+                        -> Sets availability/SLA -> Saves.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>UI/UX:</strong> A settings page with toggle switches for all 8 features. The UI
+                        conditionally renders based on the category chosen (e.g., Hide "Song Requests" if category is
+                        "Chef").<br>
+                        <strong>FE/BE Logic:</strong> Fetch available feature flags for the user's category. Save
+                        pricing and active status to the database.
+                    </p>
+                    <label class="task"><input type="checkbox" data-id="c_2_1"><span class="custom-cb"></span> Build
+                        Category & Pricing Setup Flow</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 3: 100% Core Feature Coverage (The 8 Monetization Pillars)</h3>
+                <div class="details">
+                    <p>This phase explicitly implements the 8 critical revenue drivers required for launch.</p>
+
+                    <div class="feature-block">
+                        <h4>1. Video Call Bookings (1-on-1 Virtual Meetups)</h4>
+                        <p><strong>Flow:</strong> Fan requests date/time -> Creator accepts/proposes new time -> Fan
+                            pays -> Platform generates secure video link -> Meeting occurs.</p>
+                        <p><strong>UI/UX:</strong> Calendar UI for availability selection. Dashboard view of upcoming
+                            calls with a "Join Room" button.</p>
+                        <p><strong>FE/BE Logic:</strong> Integration with a video SDK (e.g., Twilio Video, Zoom API, or
+                            Daily.co). BE must generate secure, time-limited tokens so the room is only accessible at
+                            the scheduled time.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_1"><span class="custom-cb"></span>
+                            Testing: Verify users cannot join the room before the scheduled time. Test connection
+                            stability on low-bandwidth networks.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>2. Personalized Shoutouts (Asynchronous Video Messages)</h4>
+                        <p><strong>Flow:</strong> Fan submits prompt/script -> Creator reviews -> Accepts -> Records
+                            Video -> Uploads -> Fan notified.</p>
+                        <p><strong>UI/UX:</strong> Request queue showing prompt details and countdown timer (SLA).
+                            In-browser video recorder or file upload component.</p>
+                        <p><strong>FE/BE Logic:</strong> AWS S3 or Mux for video storage and transcoding. BE cron job to
+                            monitor the 7-day SLA limit.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_2"><span class="custom-cb"></span>
+                            Testing: Test large file uploads (up to 500MB). CRITICAL: Test auto-refund logic if the
+                            creator misses the SLA deadline.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>3. Business Ad Bookings (B2B Promotional Content)</h4>
+                        <p><strong>Flow:</strong> Brand submits brief + contract terms -> Creator reviews -> Creator
+                            counter-offers or accepts -> Brand pays -> Creator delivers high-res ad -> Brand approves.
+                        </p>
+                        <p><strong>UI/UX:</strong> Messaging and negotiation interface. Clear display of commercial
+                            usage rights and licensing terms.</p>
+                        <p><strong>FE/BE Logic:</strong> State machine in BE (Pending -> Negotiating -> Accepted -> Paid
+                            -> Delivered -> Approved). Escrow hold duration must be longer and tied to brand approval.
+                        </p>
+                        <label class="task"><input type="checkbox" data-id="c_3_3"><span class="custom-cb"></span>
+                            Testing: Verify the back-and-forth negotiation flow. Ensure funds are locked in escrow until
+                            the brand explicitly clicks "Approve."</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>4. Auction System (Exclusive Experiences or Physical Items)</h4>
+                        <p><strong>Flow:</strong> Creator creates Auction -> Sets Reserve Price & End Date -> Fans Bid
+                            -> Timer Ends -> Highest Bidder's card is charged -> Creator ships/delivers.</p>
+                        <p><strong>FE/BE Logic:</strong> FE: WebSockets for real-time bid updates without refreshing.
+                            BE: Redis for high-concurrency bidding. Background worker to close the auction precisely at
+                            expiration and immediately charge the vaulted card.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_4"><span class="custom-cb"></span>
+                            Testing: Simulate 100 concurrent bids in the last 10 seconds to ensure no race conditions
+                            and the correct winner is chosen.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>5. Merch (E-commerce Storefront)</h4>
+                        <p><strong>Flow:</strong> Creator adds Product -> Uploads Images -> Sets Inventory/Price -> Fans
+                            purchase -> Creator receives shipping details -> Creator ships and updates tracking.</p>
+                        <p><strong>FE/BE Logic:</strong> Standard e-commerce CRUD. BE must handle inventory decrementing
+                            upon successful fan payment to prevent overselling.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_5"><span class="custom-cb"></span>
+                            Testing: Test "Out of Stock" UI state when inventory hits zero. Verify shipping details are
+                            correctly passed to the creator only after payment success.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>6. Live Event (One-to-Many Broadcasting)</h4>
+                        <p><strong>FE/BE Logic:</strong> Integration with a broadcasting provider (Agora, AWS IVS, or
+                            Mux Live). BE must generate secure RTMP ingest keys for the creator and viewing tokens for
+                            ticket holders.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_6"><span class="custom-cb"></span>
+                            Testing: Ensure non-ticket holders cannot access the stream URL. Load test the chat
+                            functionality for 1,000+ concurrent users.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>7. Monthly Subscription (Exclusive Content Tiers)</h4>
+                        <p><strong>FE/BE Logic:</strong> Integration with Stripe Billing or Paystack Subscriptions for
+                            recurring automated charges. BE middleware to restrict content access to users where
+                            is_subscribed == true.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_7"><span class="custom-cb"></span>
+                            Testing: Verify webhooks correctly revoke content access immediately if a fan's monthly
+                            payment fails or they cancel.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>8. Video/Song Requests (Category-Specific Fulfillment)</h4>
+                        <p><strong>FE/BE Logic:</strong> Flexible file upload handling in the BE accepting various MIME
+                            types based on the creator's category settings.</p>
+                        <label class="task"><input type="checkbox" data-id="c_3_8"><span class="custom-cb"></span>
+                            Testing: Verify file type restrictions (e.g., ensure a musician can upload an .mp3 for a
+                            song request, but block malicious executables).</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 4: Order Management & Delivery Dashboard</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>The Creator logs in -> Sees a consolidated "To-Do" list (Pending Shoutouts, Upcoming Live Events,
+                        Merch to Ship) -> Clicks into an item -> Fulfills it.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>UI/UX:</strong> Kanban board or list view grouped by urgency (e.g., "Overdue", "Due
+                        Today", "New").<br>
+                        <strong>FE/BE Logic:</strong> GET /api/creator/tasks returning a unified JSON array of all
+                        different order types (Shoutouts, Merch, Ads, etc.), sorted by deadline.
+                    </p>
+                    <label class="task"><input type="checkbox" data-id="c_4_1"><span class="custom-cb"></span> Testing:
+                        Ensure the dashboard loads in under 2 seconds, even with hundreds of pending orders across all 8
+                        features.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 5: Wallet, Payouts, & Analytics</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Fan pays -> Funds go to Platform Escrow -> Creator delivers -> Dispute window passes -> Funds
+                        move to "Available Balance" -> Creator requests withdrawal -> Funds hit local bank.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>UI/UX:</strong> Analytics chart (Earnings over time). Wallet UI showing "Pending" vs.
+                        "Available" balances. Withdrawal form.<br>
+                        <strong>FE/BE Logic:</strong> Strict double-entry accounting database structure to track
+                        platform fees vs. creator earnings. Integration with Paystack Transfers API or Stripe Connect
+                        for automated payouts to global bank accounts.
+                    </p>
+                    <label class="task"><input type="checkbox" data-id="c_5_1"><span class="custom-cb"></span> CRITICAL
+                        P0 Test: Attempt to withdraw more than the available balance (must fail).</label>
+                    <label class="task"><input type="checkbox" data-id="c_5_2"><span class="custom-cb"></span> Test:
+                        Verify the platform's commission (e.g., 20%) is accurately deducted across all 8 feature
+                        transaction types.</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAN PLAN -->
+        <section class="section plan-section" id="fan-plan">
+            <h2 class="section-title"><i class="fa-solid fa-users highlight"></i> Fan (User) End-to-End Technical
+                Roadmap</h2>
+            <p class="section-subtitle">Achieving the ≥ 98% Booking Flow Success Rate KPI across all 8 core features.
+            </p>
+
+            <div class="phase-card">
+                <h3>Phase 1: Authentication, Onboarding & Discovery</h3>
+                <div class="details">
+                    <h4>1. The Fan Authentication Flow (Minimizing Friction)</h4>
+                    <p><strong>Flow 1 (Standard):</strong> Fan clicks Login/Signup -> Enters Email & Password OR selects
+                        OAuth -> Redirected back.<br>
+                        <strong>Flow 2 (Guest Checkout):</strong> Fan clicks "Book Now" as a guest -> Modal prompts for
+                        Email -> Auto-create account in the background -> Proceed directly to payment.<br>
+                        <strong>Flow 3 (Magic Link):</strong> Fan enters email -> Receives secure link -> Automatically
+                        logged in.
+                    </p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE Logic:</strong> Implement debounced search. Handle auto-translation state (i18n) and
+                        local currency formatting. Manage JWT or HttpOnly cookies for session persistence.<br>
+                        <strong>BE Logic:</strong> Auth endpoints (/auth/login, /auth/oauth, /auth/magic-link). GET
+                        /api/creators/search with pagination, full-text search, and category filtering.
+                    </p>
+                    <label class="task"><input type="checkbox" data-id="f_1_1"><span class="custom-cb"></span> Test
+                        (Auth): Verify that "Guest Checkout" correctly provisions a shadow account and links the
+                        purchase.</label>
+                    <label class="task"><input type="checkbox" data-id="f_1_2"><span class="custom-cb"></span> Test
+                        (Auth): Ensure OAuth redirects return the user to their exact previous state.</label>
+                    <label class="task"><input type="checkbox" data-id="f_1_3"><span class="custom-cb"></span> Test
+                        (Discovery): Search results must return in under 300ms.</label>
+                    <label class="task"><input type="checkbox" data-id="f_1_4"><span class="custom-cb"></span> Test
+                        (Localization): Verify Nigeria sees prices in NGN, UK sees GBP.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 2: Core Booking & Checkout Flows (The 8 Pillars)</h3>
+                <div class="details">
+                    <p>The Fan's journey through purchasing and receiving each specific service.</p>
+
+                    <div class="feature-block">
+                        <h4>1. Video Call Bookings</h4>
+                        <p><strong>Flow:</strong> Select "Book Call" -> View Calendar -> Pick Time -> Checkout ->
+                            Receive Email Invite -> Join.<br>
+                            <strong>FE/BE Logic:</strong> Integration with a calendar UI (e.g., react-big-calendar). BE
+                            must validate time slot is not double-booked.
+                        </p>
+                        <label class="task"><input type="checkbox" data-id="f_2_1"><span class="custom-cb"></span>
+                            Testing: Attempt to book concurrently from two different accounts. DB must lock row.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>2. Personalized Shoutouts</h4>
+                        <p><strong>FE/BE Logic:</strong> Form submission must be temporarily stored in a caching layer
+                            (Redis) until the payment gateway confirms success.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_2"><span class="custom-cb"></span>
+                            Testing: Verify Fan can easily download the .mp4 (requires Content-Disposition: attachment
+                            headers).</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>3. Business Ad Bookings</h4>
+                        <p><strong>FE/BE Logic:</strong> Secure messaging UI with file attachment support. BE must
+                            handle "Release Funds" trigger only on "Approve."</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_3"><span class="custom-cb"></span>
+                            Testing: Test dispute flow—what happens if brand rejects 3 times? Verify escrow
+                            refund.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>4. Auction System</h4>
+                        <p><strong>FE/BE Logic:</strong> Stripe "SetupIntents" or Paystack "Tokenization" to save the
+                            card before allowing a bid.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_4"><span class="custom-cb"></span>
+                            Testing: CRITICAL: Ensure a user without a validated, saved payment method cannot place a
+                            bid.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>5. Merch</h4>
+                        <p><strong>FE/BE Logic:</strong> Cart state management (Redux/Zustand). BE integration with
+                            shipping API to provide tracking.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_5"><span class="custom-cb"></span>
+                            Testing: Test cart persistence on tab close.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>6. Live Event</h4>
+                        <p><strong>FE/BE Logic:</strong> E-ticket generation (QR code/token). FE video player must pass
+                            token to BE to authorize viewing.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_6"><span class="custom-cb"></span>
+                            Testing: Share live stream URL unauthenticated. BE must block (403 Forbidden).</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>7. Monthly Subscription</h4>
+                        <p><strong>FE/BE Logic:</strong> FE feed dynamically unlocks upon payment webhook. BE manages
+                            Stripe Customer IDs.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_7"><span class="custom-cb"></span>
+                            Testing: Verify cancellation flow is self-serve and immediately stops next billing
+                            cycle.</label>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>8. Video/Song Requests</h4>
+                        <p><strong>FE/BE Logic:</strong> FE media player must support both Audio and Video playback
+                            natively depending on upload.</p>
+                        <label class="task"><input type="checkbox" data-id="f_2_8"><span class="custom-cb"></span>
+                            Testing: Verify dashboard correctly renders audio player for .mp3 and video player for
+                            .mp4.</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 3: Frictionless Checkout & Wallet</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Fan clicks "Pay" -> Chooses saved card OR enters new card/Mobile Money -> 3D Secure Verification
+                        -> Success redirect.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> Implement Stripe Elements (Global) and Paystack Checkout (Africa).
+                        Support for Apple Pay / Google Pay to maximize conversion.</p>
+                    <label class="task"><input type="checkbox" data-id="f_3_1"><span class="custom-cb"></span> Testing
+                        (Target: ≥ 97% Payment Completion): Test African card 3D Secure flows rigorously. Test Mobile
+                        Money timeout edge cases.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 4: The Fan Dashboard (Content Library)</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Fan logs in -> Clicks "My Library" -> Sees tabs for: Pending Requests, Completed Videos, Live
+                        Tickets, Merch Orders, and Subscriptions.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> GET /api/fan/orders returning a structured JSON of all past and
+                        present transactions.</p>
+                    <label class="task"><input type="checkbox" data-id="f_4_1"><span class="custom-cb"></span> Testing:
+                        Ensure high-resolution videos load without excessive buffering leveraging CDN.</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN PLAN -->
+        <section class="section plan-section" id="admin-plan">
+            <h2 class="section-title"><i class="fa-solid fa-shield-halved highlight"></i> Admin End-to-End Technical
+                Roadmap (RBAC)</h2>
+            <p class="section-subtitle">Strict Role-Based Access Control to ensure security, financial compliance, and
+                effective moderation.</p>
+
+            <div class="phase-card">
+                <h3>Phase 1: RBAC Architecture & Security</h3>
+                <div class="details">
+                    <h4>1. Role Definitions</h4>
+                    <p><strong>Superadmin:</strong> Full access (invite admins, view revenue, system logs).<br>
+                        <strong>Financial Admin:</strong> Command Center only (process payouts, escrow balances).<br>
+                        <strong>Moderator (Support):</strong> User management, KYC approval, disputes, content review.
+                    </p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>BE Logic:</strong> Implement middleware (e.g., requireRole(['SUPERADMIN'])) on all
+                        sensitive API routes. Maintain an audit log table tracking every action.</p>
+                    <label class="task"><input type="checkbox" data-id="a_1_1"><span class="custom-cb"></span> CRITICAL
+                        Testing: Attempt to hit a payout API endpoint using a "Moderator" token. It must return 403
+                        Forbidden.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 2: KYC & Creator Onboarding Management</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Creator submits KYC -> Admin "Pending Review" Queue -> Moderator reviews -> Clicks "Approve" ->
+                        Creator notified, features unlock.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> GET /api/admin/creators/pending. POST
+                        /api/admin/creators/{id}/approve (Triggers webhook and DB role update).</p>
+                    <label class="task"><input type="checkbox" data-id="a_2_1"><span class="custom-cb"></span> Testing:
+                        Verify rejecting an application sends automated email with specific reason, keeping dashboard
+                        locked.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 3: Financial Command Center & Escrow Management</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow (Creator Payouts)</h4>
+                    <p>Escrow passes 48-hr dispute window -> Creator requests withdrawal -> Financial Admin reviews ->
+                        Clicks "Process Payout" -> API sends funds to bank.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> Integration with Stripe Connect / Paystack Transfers. Strict
+                        Double-Entry accounting logic so platform never pays out its own commission.</p>
+                    <label class="task"><input type="checkbox" data-id="a_3_1"><span class="custom-cb"></span> Testing:
+                        Attempt to process payout twice (double-click). BE must use idempotency keys to ensure it
+                        happens once.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 4: Dispute Resolution & Content Moderation</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow (Disputes & Moderation)</h4>
+                    <p>Fan opens dispute -> Escrow automatically frozen -> Ticket appears in Moderator Dashboard ->
+                        Moderator sides with Fan -> Triggers Refund.<br>
+                        System flags Live Event -> Moderator enters "Ghost Mode" to monitor -> If violating TOS, Clicks
+                        "Terminate Stream".</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> Escrow Freeze: If dispute_status == 'OPEN', payout cron job skips
+                        transaction. Live Stream API integration to forcefully terminate RTMP stream.</p>
+                    <label class="task"><input type="checkbox" data-id="a_4_1"><span class="custom-cb"></span> Testing:
+                        Verify a frozen transaction absolutely cannot be withdrawn by creator, even if SLA
+                        passes.</label>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <h3>Phase 5: Global Settings & Analytics (Superadmin Only)</h3>
+                <div class="details">
+                    <h4>1. End-to-End Flow</h4>
+                    <p>Superadmin logs in -> "Platform Settings" -> Adjusts default commission rate -> Saves.</p>
+                    <h4>2. Technical Requirements</h4>
+                    <p><strong>FE/BE Logic:</strong> Store platform settings in DB or Redis so they are read instantly
+                        during transactions.</p>
+                    <label class="task"><input type="checkbox" data-id="a_5_1"><span class="custom-cb"></span> Testing:
+                        Verify changing commission rate only affects new transactions, not retroactive escrow
+                        funds.</label>
+                </div>
+            </div>
+        </section>
+
+        <div id="launch-gtm-seo-anchor"></div>
+
+    </main>
+
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">UI Feature Gallery</h2>
+            <p class="section-subtitle">Conceptual references for the implementation phase.</p>
+
+            <div class="masonry-grid">
+                <div class="gallery-item">
+                    <img src="BookvideoCalldashboard.png" alt="Video Call Booking Dashboard">
+                    <div class="overlay">Video Booking Dashboard</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Calanderfoeevenetbooking.png" alt="Event Calendar">
+                    <div class="overlay">Event Calendar UI</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="CreateEvent Forms.png" alt="Create Event Form">
+                    <div class="overlay">Create Event Form</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Even UI.png" alt="Event UI">
+                    <div class="overlay">Live Event Interface</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Eventdashboard.png" alt="Event Dashboard">
+                    <div class="overlay">Event Management Dashboard</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Request Shout form.png" alt="Request Shoutout">
+                    <div class="overlay">Shoutout Request Form</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Afrostardom Technical Roadmap</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="launch-gtm-seo.js"></script>
+</body>
+
+</html>

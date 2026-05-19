@@ -275,6 +275,50 @@ h1, h2, h3, h4 {
     opacity: 0.4;
 }
 
+/* Harmonized Persona Tables */
+.deliverable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.deliverable-table thead th {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--primary);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.deliverable-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.deliverable-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+}
+
+.risk-card h3 {
+    background: rgba(255, 60, 60, 0.08) !important;
+    color: #ff6b6b !important;
+}
+
+.risk-table tbody td:nth-child(2) {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.risk-table tbody td:nth-child(3) {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Gallery */
 .gallery {
     padding-top: 2rem;
 }
@@ -326,4 +370,21 @@ footer {
     padding: 2rem;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.8rem; }
+    .nav-progress { width: 150px; }
+}
+
+@media (max-width: 768px) {
+    .navbar { flex-wrap: wrap; gap: 0.5rem; }
+    .nav-links { gap: 0.6rem; flex-wrap: wrap; }
+    .hero h1 { font-size: 2.2rem; }
+    .section-title { font-size: 1.6rem; }
+    .deliverable-table { font-size: 0.8rem; }
+    .deliverable-table thead th,
+    .deliverable-table tbody td { padding: 0.5rem; }
 }

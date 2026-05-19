@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <tr><td>Payment Gateway Integration (Stripe + Paystack routing)</td><td>Fan</td><td>Backend</td><td>14–18</td></tr>
                         <tr><td>Escrow Ledger (double-entry accounting, platform commission split)</td><td>Admin + Creator</td><td>Backend</td><td>16–20</td></tr>
                         <tr><td>Business Ad Booking (negotiation state machine + messaging UI)</td><td>Fan + Creator</td><td>Full-Stack</td><td>18–22</td></tr>
+                        <tr><td>Messaging / DMs System (Real-time Fan/Creator chat)</td><td>Fan + Creator</td><td>Full-Stack</td><td>18–22</td></tr>
                         <tr><td>Monthly Subscription (Stripe Billing / Paystack recurring)</td><td>Fan + Creator</td><td>Full-Stack</td><td>20–25</td></tr>
                     </tbody>
                 </table>
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label class="task"><input type="checkbox" data-id="h_2_3"><span class="custom-cb"></span> Payment gateway live (Stripe global + Paystack Africa routing)</label>
                 <label class="task"><input type="checkbox" data-id="h_2_4"><span class="custom-cb"></span> Escrow ledger accurately splitting platform commission</label>
                 <label class="task"><input type="checkbox" data-id="h_2_5"><span class="custom-cb"></span> Monthly Subscription recurring billing + webhook revocation tested</label>
+                <label class="task"><input type="checkbox" data-id="h_2_6"><span class="custom-cb"></span> Messaging/DMs system live and tested for real-time delivery</label>
             </div>
         </div>
 
@@ -85,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <tr><td>Creator Delivery Dashboard (Kanban: Overdue / Due Today / New)</td><td>Creator</td><td>Frontend</td><td>34–37</td></tr>
                         <tr><td>Fan Content Library (My Library: videos, tickets, orders, subs)</td><td>Fan</td><td>Frontend</td><td>34–37</td></tr>
                         <tr><td>Admin Financial Dashboard (escrow balance, pending payouts, revenue)</td><td>Admin</td><td>Full-Stack</td><td>36–40</td></tr>
+                        <tr><td>Notification Strategy Matrix (Email/SMS/Push integration)</td><td>All</td><td>Backend</td><td>34–38</td></tr>
                         <tr><td>SLA Auto-Refund Cron Job (missed deadlines → refund fan)</td><td>All</td><td>Backend</td><td>38–40</td></tr>
                     </tbody>
                 </table>
@@ -103,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label class="task"><input type="checkbox" data-id="h_3_3"><span class="custom-cb"></span> Live Event stream stable with 1,000 concurrent viewers</label>
                 <label class="task"><input type="checkbox" data-id="h_3_4"><span class="custom-cb"></span> Creator Delivery Dashboard + Fan Content Library functional</label>
                 <label class="task"><input type="checkbox" data-id="h_3_5"><span class="custom-cb"></span> Admin Financial Dashboard showing real escrow/revenue data</label>
+                <label class="task"><input type="checkbox" data-id="h_3_6"><span class="custom-cb"></span> Notification matrix integrated for all existing feature events</label>
             </div>
         </div>
 
@@ -118,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <tr><td>Dispute Resolution Flow (fan opens dispute → escrow freeze → moderator review)</td><td>All</td><td>Full-Stack</td><td>44–47</td></tr>
                         <tr><td>Content Moderation Queue (flagged videos, Ghost Mode for live events)</td><td>Admin</td><td>Full-Stack</td><td>44–47</td></tr>
                         <tr><td>Notification System (email + SMS + in-app for all transaction types)</td><td>All</td><td>Backend</td><td>47–50</td></tr>
+                        <tr><td>Customer Support & Help Center (FAQ, Tickets, Live Chat)</td><td>All</td><td>Full-Stack</td><td>46–49</td></tr>
                         <tr><td>Superadmin Settings Panel (commission rate, platform variables)</td><td>Admin</td><td>Full-Stack</td><td>48–50</td></tr>
                     </tbody>
                 </table>
@@ -133,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label class="task"><input type="checkbox" data-id="h_4_2"><span class="custom-cb"></span> Admin can process payouts to real bank accounts (tested E2E)</label>
                 <label class="task"><input type="checkbox" data-id="h_4_3"><span class="custom-cb"></span> Dispute flow freezes escrow correctly; moderator can refund or release</label>
                 <label class="task"><input type="checkbox" data-id="h_4_4"><span class="custom-cb"></span> All notification channels (email/SMS/in-app) firing for all 8 features</label>
+                <label class="task"><input type="checkbox" data-id="h_4_5"><span class="custom-cb"></span> Customer Support portal and Help Center live</label>
             </div>
         </div>
 
@@ -145,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tbody>
                         <tr><td>Closed Beta with 50–100 real users (15+ creators, 50+ fans)</td><td>All</td><td>QA + PM</td><td>51–55</td></tr>
                         <tr><td>Load Testing (k6/Artillery: browsing, bidding, streaming)</td><td>All</td><td>DevOps</td><td>54–56</td></tr>
+                        <tr><td>Accessibility (WCAG 2.1 AA) Audit & Remediation</td><td>Fan + Creator</td><td>Frontend</td><td>52–55</td></tr>
                         <tr><td>Cross-Browser + Mobile QA (Chrome, Safari, Firefox, Samsung)</td><td>Fan</td><td>QA</td><td>55–57</td></tr>
                         <tr><td>P0/P1 Bug Resolution</td><td>All</td><td>All Devs</td><td>55–59</td></tr>
                         <tr><td>Production Deploy (DNS, SSL, CDN, Sentry, Uptime Monitoring)</td><td>All</td><td>DevOps</td><td>58–59</td></tr>
@@ -155,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label class="task"><input type="checkbox" data-id="h_5_2"><span class="custom-cb"></span> Load tests passed for all critical flows</label>
                 <label class="task"><input type="checkbox" data-id="h_5_3"><span class="custom-cb"></span> 0 P0 bugs, ≤ 1 P1 bug per feature at launch</label>
                 <label class="task"><input type="checkbox" data-id="h_5_4"><span class="custom-cb"></span> Production live on afrostardom.com with SSL + CDN + monitoring</label>
+                <label class="task"><input type="checkbox" data-id="h_5_5"><span class="custom-cb"></span> Platform achieves WCAG 2.1 AA Accessibility compliance</label>
             </div>
         </div>
 

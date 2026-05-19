@@ -31,6 +31,7 @@
             <li><a href="#launch-plan">Launch</a></li>
             <li><a href="#gtm-plan">GTM</a></li>
             <li><a href="#seo-plan">SEO</a></li>
+            <li><a href="#missing-features">Extras</a></li>
             <li><a href="#gallery">Gallery</a></li>
         </ul>
     </nav>
@@ -233,6 +234,23 @@
                         transaction types.</label>
                 </div>
             </div>
+            <div class="phase-card">
+                <h3>Phase 6: Core Communications & Support (Launch Critical)</h3>
+                <div class="details">
+                    <h4>1. Messaging / DMs System</h4>
+                    <p><strong>Flow:</strong> Fan sends message or Voice Note -> Creator receives push notification -> Creator responds or accepts Business Ad terms.</p>
+                    <label class="task"><input type="checkbox" data-id="c_6_1"><span class="custom-cb"></span> Real-time 1-on-1 messaging functional between Fan and Creator</label>
+                    <label class="task"><input type="checkbox" data-id="c_6_2"><span class="custom-cb"></span> Voice Note recording and playback working in-chat</label>
+
+                    <h4>2. Notification Matrix</h4>
+                    <p><strong>Flow:</strong> System triggers Email/SMS/Push/In-App for SLA warnings, successful deliveries, new subs, and payouts.</p>
+                    <label class="task"><input type="checkbox" data-id="c_6_3"><span class="custom-cb"></span> Creator receives SMS & Push for high-priority events (bookings, payouts)</label>
+
+                    <h4>3. Help Center & Accessibility</h4>
+                    <p><strong>Flow:</strong> Creator can access FAQ and submit support tickets directly to Moderator. Dashboard must be WCAG 2.1 AA compliant.</p>
+                    <label class="task"><input type="checkbox" data-id="c_6_4"><span class="custom-cb"></span> Keyboard navigation tested on dashboard flows</label>
+                </div>
+            </div>
         </section>
 
         <!-- FAN PLAN -->
@@ -378,6 +396,22 @@
                         Ensure high-resolution videos load without excessive buffering leveraging CDN.</label>
                 </div>
             </div>
+            <div class="phase-card">
+                <h3>Phase 5: Communications & Support (Launch Critical)</h3>
+                <div class="details">
+                    <h4>1. Messaging / DMs System</h4>
+                    <p><strong>Flow:</strong> Fan messages Creator -> Real-time chat -> Can attach briefs for Ads.</p>
+                    <label class="task"><input type="checkbox" data-id="f_5_1"><span class="custom-cb"></span> Fan can send messages, voice notes, and file attachments</label>
+
+                    <h4>2. Notification Matrix</h4>
+                    <p><strong>Flow:</strong> Fan receives Email/SMS/Push/In-App when their video is delivered, auction is won, or live event is starting.</p>
+                    <label class="task"><input type="checkbox" data-id="f_5_2"><span class="custom-cb"></span> Fan receives notifications across appropriate channels</label>
+
+                    <h4>3. Customer Support & Accessibility</h4>
+                    <p><strong>Flow:</strong> Fan can view FAQ, use Live Chat (Crisp/Tawk.to), and navigate site using screen readers (WCAG 2.1).</p>
+                    <label class="task"><input type="checkbox" data-id="f_5_3"><span class="custom-cb"></span> FAQ and Contact form accessible; Lighthouse accessibility score ≥ 90</label>
+                </div>
+            </div>
         </section>
 
         <!-- ADMIN PLAN -->
@@ -464,11 +498,26 @@
                         funds.</label>
                 </div>
             </div>
+            <div class="phase-card">
+                <h3>Phase 6: Support, Comm & Accessibility (Launch Critical)</h3>
+                <div class="details">
+                    <h4>1. Support Tickets & Message Moderation</h4>
+                    <p><strong>Flow:</strong> Moderator receives support tickets. Moderator can view DM threads as read-only evidence during disputes.</p>
+                    <label class="task"><input type="checkbox" data-id="a_6_2"><span class="custom-cb"></span> Admin can view message threads as read-only evidence</label>
+                    <label class="task"><input type="checkbox" data-id="a_6_3"><span class="custom-cb"></span> Support tickets visible and assignable in Admin dashboard</label>
+
+                    <h4>2. System Notifications</h4>
+                    <p><strong>Flow:</strong> Admins receive alerts for disputes and KYC applications. Admins can configure global notification templates.</p>
+                    <label class="task"><input type="checkbox" data-id="a_6_4"><span class="custom-cb"></span> Email/SMS templates configured and tested for all 14 matrix events</label>
+                </div>
+            </div>
         </section>
 
         <div id="harmonized-persona-anchor"></div>
 
         <div id="launch-gtm-seo-anchor"></div>
+
+        <div id="missing-features-anchor"></div>
 
     </main>
 
@@ -513,6 +562,7 @@
     <script src="app.js"></script>
     <script src="harmonized-persona.js"></script>
     <script src="launch-gtm-seo.js"></script>
+    <script src="missing-features.js"></script>
 </body>
 
 </html>
